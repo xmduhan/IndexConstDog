@@ -7,3 +7,4 @@ Untitled*
 03-script/01-exhaust/config
 *.xls
 nohup.out
+db.sqlite3
