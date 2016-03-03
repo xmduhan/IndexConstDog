@@ -5,6 +5,7 @@ from __future__ import division
 from subprocess import call
 import pandas as pd
 from indexconst.models import Index, IndexConst
+from mail import sendMail
 
 
 def flashIndexConst(index):
@@ -43,10 +44,13 @@ def run():
     """
     更新所有指数数据
     """
+    toSendList = ['duhan@189.cn']
     for index in Index.objects.all():
         print u'%s:开始更新' % index.name
         try:
             flashIndexConst(index)
             print u'%s:更新完成' % index.name
+            sendMail(toSendList, u'indexconst更新提醒', u'%s:更新完成' % index.name, [])
         except:
             print u'%s:出错...' % index.name
+            sendMail(toSendList, u'indexconst更新警告', u'%s:出错...' % index.name, [])
