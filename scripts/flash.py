@@ -6,6 +6,7 @@ from subprocess import call
 import pandas as pd
 from indexconst.models import Index, IndexConst
 from mail import sendMail
+from time import sleep
 
 
 def flashIndexConst(index):
@@ -54,3 +55,4 @@ def run():
         except:
             print u'%s:出错...' % index.name
             sendMail(toSendList, u'indexconst更新警告', u'%s:出错...' % index.name, [])
+	sleep(5)
