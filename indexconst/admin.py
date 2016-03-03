@@ -1,14 +1,14 @@
 from django.contrib import admin
-from models import HS300Const, ZZ500Const
+from models import Index, IndexConst
 
 
-class HS300ConstAdmin(admin.ModelAdmin):
-    fields = ['flashTime', 'date', 'code', 'weight']
-    list_display = ['flashTime', 'date', 'code', 'weight']
-admin.site.register(HS300Const, HS300ConstAdmin)
+class IndexAdmin(admin.ModelAdmin):
+    fields = ['name', 'loadUrl']
+    list_display = ['name', 'loadUrl']
+admin.site.register(Index, IndexAdmin)
 
 
-class ZZ500ConstAdmin(admin.ModelAdmin):
-    fields = ['flashTime', 'date', 'code', 'weight']
-    list_display = ['flashTime', 'date', 'code', 'weight']
-admin.site.register(ZZ500Const, ZZ500ConstAdmin)
+class IndexConstAdmin(admin.ModelAdmin):
+    fields = ['index', 'date', 'code', 'weight', 'flashTime']
+    list_display = ['index', 'date', 'code', 'weight', 'flashTime']
+admin.site.register(IndexConst, IndexConstAdmin)

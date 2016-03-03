@@ -31,32 +31,4 @@ class IndexConst(models.Model):
 
     class Meta:
         verbose_name = u'指数成分'
-        verbose_name_plural = u'[01].指数成分'
-
-
-class HS300Const(models.Model):
-    """
-    沪深300指数成分数据
-    """
-    flashTime = models.DateTimeField("数据更新", default=datetime.now)
-    date = models.CharField(u'日期', max_length=20)
-    code = models.CharField(u'代码', max_length=20)
-    weight = models.FloatField(u'权重')
-
-    class Meta:
-        verbose_name = u'沪深300指数成分'
-        verbose_name_plural = u'[01].沪深300指数成分'
-
-
-class ZZ500Const(models.Model):
-    """
-    中证500指数成分数据
-    """
-    flashTime = models.DateTimeField("数据更新", default=datetime.now)
-    date = models.CharField(u'日期', max_length=20)
-    code = models.CharField(u'代码', max_length=20)
-    weight = models.FloatField(u'权重')
-
-    class Meta:
-        verbose_name = u'中证500指数成分'
-        verbose_name_plural = u'[02].中证500指数成分'
+        verbose_name_plural = u'[02].指数成分'
