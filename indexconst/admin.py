@@ -11,6 +11,5 @@ admin.site.register(Index, IndexAdmin)
 class IndexConstAdmin(admin.ModelAdmin):
     fields = ['index', 'date', 'code', 'weight', 'flashTime']
     list_display = ['index', 'date', 'code', 'weight', 'flashTime']
-    list_filter = ['index']
-    date_hierarchy = 'date'
+    list_filter = ['index', 'date']
 admin.site.register(IndexConst, IndexConstAdmin)
